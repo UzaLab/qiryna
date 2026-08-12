@@ -87,13 +87,8 @@
           </div>
         </div>
 
-        <!-- Title + school list (Figma 546:190) -->
+        <!-- School list (Figma 546:190) -->
         <div class="le-list-block">
-          <div class="le-list-head">
-            <h1 class="le-title" data-le-title>Écoles en Architecture en France</h1>
-            <p class="le-subtitle" data-le-count>7+ écoles disponibles</p>
-          </div>
-
           <div class="le-schools" data-le-schools></div>
 
           <div data-pagination data-pages="4" data-current="1"></div>
@@ -141,15 +136,6 @@
     });
   }
 
-  const PAYS_LABELS = {
-    france: 'France',
-    canada: 'Canada',
-    allemagne: 'Allemagne',
-    chine: 'Chine',
-    angleterre: 'Angleterre',
-    usa: 'États-Unis',
-  };
-
   const DOMAINES = [
     { id: 'architecture', label: 'Architecture' },
     { id: 'management', label: 'Management' },
@@ -164,12 +150,9 @@
   let domaine = params.get('domaine') || 'architecture';
   if (!DOMAINES.some((d) => d.id === domaine)) domaine = 'architecture';
 
-  const paysLabel = PAYS_LABELS[pays] || 'France';
   const back = document.querySelector('[data-le-back]');
   if (back) back.href = `domaines-etude.html?pays=${encodeURIComponent(pays)}`;
 
-  const titleEl = document.querySelector('[data-le-title]');
-  const countEl = document.querySelector('[data-le-count]');
   const schoolsEl = document.querySelector('[data-le-schools]');
   const chipsEl = document.querySelector('[data-le-chips]');
   const chips = [...document.querySelectorAll('.le-chip')];
@@ -184,9 +167,6 @@
   function renderSchools() {
     if (!schoolsEl) return;
     const list = schoolsForDomaine(domaine);
-    if (countEl) {
-      countEl.textContent = `${Math.max(list.length, 7)}+ écoles disponibles`;
-    }
     schoolsEl.innerHTML = list
       .map(
         (s) => `
@@ -214,25 +194,13 @@
           </div>
         </div>
         <div class="le-school-aside">
-          <div class="le-school-thumb-wrap">
-            <div class="le-school-thumb">
-              <img src="${s.thumb}" alt="" width="64" height="64" />
-            </div>
-            <span class="le-school-heart" aria-hidden="true">
-              <img src="../assets/icons/ic-le-heart.svg" alt="" width="20" height="20" />
-            </span>
+          <div class="le-school-thumb">
+            <img src="${s.thumb}" alt="" width="64" height="64" />
           </div>
-          <img class="le-school-chevron" src="../assets/icons/ic-le-chevron-card.svg" alt="" width="9" height="9" />
         </div>
       </a>`
       )
       .join('');
-  }
-
-  function updateTitle(id) {
-    const d = DOMAINES.find((x) => x.id === id);
-    if (!d || !titleEl) return;
-    titleEl.textContent = `Écoles en ${d.label} en ${paysLabel}`;
   }
 
   function selectDomaine(id, { scroll = true } = {}) {
@@ -244,7 +212,6 @@
     });
     const idx = Math.max(0, DOMAINES.findIndex((d) => d.id === id));
     dots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
-    updateTitle(id);
     renderSchools();
     if (scroll && chipsEl) {
       const chip = chips.find((c) => c.dataset.domaine === id);

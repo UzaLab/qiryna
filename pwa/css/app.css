@@ -7666,6 +7666,10 @@ a.formule-card-btn:focus {
 }
 
 /* ─── Liste école (Figma 524:2) ───────────────────────────────── */
+.page-le {
+  --le-block-gap: 22px;
+}
+
 .page-le .le-header {
   flex: 1;
   min-height: 0;
@@ -7681,6 +7685,9 @@ a.formule-card-btn:focus {
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: var(--le-block-gap);
 }
 
 .le-topbar {
@@ -7688,7 +7695,6 @@ a.formule-card-btn:focus {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 16px;
 }
 
 .le-back {
@@ -7760,8 +7766,8 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: var(--le-block-gap);
   width: 100%;
-  padding: 16px 0 25px;
   box-sizing: border-box;
 }
 
@@ -7771,7 +7777,6 @@ a.formule-card-btn:focus {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -7908,33 +7913,12 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: var(--le-block-gap);
   width: 100%;
 }
 
-.le-list-head {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  color: #191919;
-}
-
-.le-title {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
-  letter-spacing: 0.6px;
-  color: #191919;
-}
-
-.le-subtitle {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-  color: #191919;
-  white-space: nowrap;
+.page-le .q-pager {
+  padding: 0;
 }
 
 .le-schools {
@@ -7942,7 +7926,6 @@ a.formule-card-btn:focus {
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  padding: 8px 0;
   box-sizing: border-box;
 }
 
@@ -8069,16 +8052,8 @@ a.formule-card-btn:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
   flex-shrink: 0;
   padding-left: 4px;
-}
-
-.le-school-thumb-wrap {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
 }
 
 .le-school-thumb {
@@ -8096,35 +8071,6 @@ a.formule-card-btn:focus {
   display: block;
 }
 
-.le-school-heart {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  left: auto;
-  width: 20px;
-  height: 20px;
-  overflow: visible;
-  z-index: 1;
-}
-
-.le-school-heart img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 32px;
-  height: 32px;
-  max-width: none;
-  transform: translate(-50%, -50%);
-  display: block;
-}
-
-.le-school-chevron {
-  width: 9px;
-  height: 9px;
-  display: block;
-  flex-shrink: 0;
-}
-
 /* ─── Shared: Trust bar (q-trust) ─────────────────────────────── */
 .q-trust {
   display: flex;
@@ -8133,7 +8079,6 @@ a.formule-card-btn:focus {
   gap: 10px;
   width: 100%;
   margin-top: 0;
-  margin-bottom:-22px;
   padding: 11px 1px;
   border: 1px solid #f1f5f9;
   border-radius: 10px;
