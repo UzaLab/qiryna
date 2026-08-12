@@ -6925,7 +6925,7 @@ a.formule-card-btn:focus {
 
 .dest-intro {
   width: 100%;
-  padding-bottom: 45px;
+  padding-bottom: 22px;
 }
 
 .dest-intro h1 {
@@ -7060,7 +7060,11 @@ a.formule-card-btn:focus {
 
 .dest-help-wrap {
   width: 100%;
-  padding: 24px 0;
+  padding: 22px 0 24px;
+}
+
+.page-dest .dest-grid + .q-pager {
+  margin-top: 0;
 }
 
 .dest-help {
