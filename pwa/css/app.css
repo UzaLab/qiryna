@@ -6987,7 +6987,7 @@ a.formule-card-btn:focus {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 22px;
   align-items: flex-start;
   width: 100%;
   min-height: 217px;
@@ -7239,6 +7239,10 @@ a.formule-card-btn:focus {
 }
 
 /* ─── Domaines d'Étude (Figma 437:1077) ───────────────────────── */
+.page-dom {
+  --dom-block-gap: 22px;
+}
+
 .page-dom .dom-header {
   flex: 1;
   min-height: 0;
@@ -7261,7 +7265,7 @@ a.formule-card-btn:focus {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: var(--dom-block-gap);
 }
 
 .dom-back {
@@ -7333,9 +7337,9 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   width: 100%;
-  padding: 17px 0;
+  padding: 10px 0;
   border: 1px solid #f1f5f9;
   border-radius: 10px;
   background: #f7f6fc;
@@ -7418,20 +7422,12 @@ a.formule-card-btn:focus {
   color: #191919;
 }
 
-.dom-banner-source {
-  margin: 0;
-  padding: 4px 0 0 18px;
-  width: 100%;
-  font-size: 9px;
-  font-weight: 400;
-  line-height: 16px;
-  color: #6d6d6d;
-  box-sizing: border-box;
-}
-
 .dom-section {
   width: 100%;
-  padding-top: 24px;
+  padding-top: var(--dom-block-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--dom-block-gap);
 }
 
 .dom-section-title {
@@ -7448,7 +7444,7 @@ a.formule-card-btn:focus {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
-  padding: 16px 0 25px;
+  padding: 0 0 25px;
 }
 
 .dom-card {
