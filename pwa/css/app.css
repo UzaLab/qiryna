@@ -6783,6 +6783,18 @@ a.formule-card-btn:focus {
   .lpp-order-body {
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .lpp-order-product {
+    width: 100%;
+  }
+
+  .lpp-order-info {
+    width: auto;
+    flex: 1;
+    min-width: 0;
   }
 
   .lpp-order-divider {
@@ -6792,17 +6804,32 @@ a.formule-card-btn:focus {
   .lpp-order-meta {
     width: 100%;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px 24px;
   }
 
   .lpp-meta-block {
     width: auto;
-    flex: 1 1 0;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .lpp-meta-block + .lpp-meta-block {
+    padding-top: 0;
+  }
+
+  .lpp-meta-label {
+    text-align: left;
   }
 
   .lpp-meta-value {
     width: auto;
+    text-align: left;
   }
 
   .lpp-step-card {
@@ -6833,12 +6860,16 @@ a.formule-card-btn:focus {
 }
 
 /* ─── Destination d'étude (Figma 436:157) ─────────────────────── */
+.page-dest {
+  --dest-block-gap: 22px;
+}
+
 .page-dest .dest-header {
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--q-gutter) 24px;
+  padding: 0 var(--q-gutter);
 }
 
 .page-dest .dest-main {
@@ -6925,7 +6956,7 @@ a.formule-card-btn:focus {
 
 .dest-intro {
   width: 100%;
-  padding-bottom: 22px;
+  padding-bottom: var(--dest-block-gap);
 }
 
 .dest-intro h1 {
@@ -7060,10 +7091,15 @@ a.formule-card-btn:focus {
 
 .dest-help-wrap {
   width: 100%;
-  padding: 22px 0 24px;
+  padding-top: var(--dest-block-gap);
+  padding-bottom: var(--dest-block-gap);
 }
 
-.page-dest .dest-grid + .q-pager {
+.page-dest .q-pager {
+  padding: var(--dest-block-gap) 20px 0;
+}
+
+.page-dest .dest-help-wrap + .q-trust {
   margin-top: 0;
 }
 
