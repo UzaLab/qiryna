@@ -8133,6 +8133,7 @@ a.formule-card-btn:focus {
   gap: 10px;
   width: 100%;
   margin-top: 0;
+  margin-bottom:-22px;
   padding: 11px 1px;
   border: 1px solid #f1f5f9;
   border-radius: 10px;
