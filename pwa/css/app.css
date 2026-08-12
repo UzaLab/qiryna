@@ -3878,12 +3878,14 @@ img { display: block; max-width: 100%; }
 
 /* ─── Home (Figma 418:2927) ───────────────────────────────────── */
 .page-home {
-  --home-block-gap: 22px;
+  --home-block-gap: 16px;
+  /* Banner sombre + coins arrondis : paraît plus serré qu’ailleurs à gap égal */
+  --home-hero-cats-gap: 24px;
 }
 
 .page-home .home-header {
   border-radius: 0 0 50px 50px;
-  padding: 0 22px;
+  padding: 0 16px;
   flex-shrink: 0;
 }
 
@@ -3958,6 +3960,7 @@ img { display: block; max-width: 100%; }
 
 .home-banner-wrap {
   padding-top: var(--home-block-gap);
+  margin-bottom: var(--home-hero-cats-gap);
   width: 100%;
 }
 
@@ -3973,7 +3976,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: stretch;
   gap: 12px;
-  padding-top: var(--home-block-gap);
+  padding-top: 0;
   width: 100%;
 }
 
@@ -4494,7 +4497,7 @@ img { display: block; max-width: 100%; }
   gap: 11px;
   width: 281px;
   max-width: calc(100% - 50px);
-  margin-top: 28px;
+  margin-top: 18px;
   padding: 10px 9px;
   border-radius: 10px;
   background: #f5f3ff;
