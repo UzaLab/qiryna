@@ -1,4 +1,4 @@
-const CACHE = "qiryna-pwa-v72";
+const CACHE = "qiryna-pwa-v73";
 const ASSETS = [
   "./",
   "./index.html",
