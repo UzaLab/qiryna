@@ -21,6 +21,12 @@
   --q-danger:       #ee163e;
   --q-muted-bg:     #f5f3fc;
   --q-muted-text:   #6b679d;
+  --q-bg-shell:     #eef0f5;
+  --q-bg-screen:    #fff;
+  --q-bg-card:      #fff;
+  --q-bg-nav:       #fff;
+  --q-bg-input:     #fff;
+  --q-text-secondary: #64748b;
   /* Rupture mobile → tablette (portrait) */
   --q-shell-max:    768px;
   --q-gutter:       clamp(16px, 4vw, 24px);
@@ -28,6 +34,27 @@
   --q-nav-gap:      22px;
   /* Nav ≈ 75px (pad 10+10, icon 34, gap 1, label 20) + 24px air above bar */
   --q-content-pad-bottom: calc(75px + 24px + env(safe-area-inset-bottom, 0px));
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --q-text:         #e8eaef;
+  --q-navy:         #c8d0e0;
+  --q-muted:        #8b93a8;
+  --q-muted-2:      #9aa3b8;
+  --q-border:       #3a4154;
+  --q-surface:      #1c2030;
+  --q-surface-2:    #252b3a;
+  --q-success-bg:   #132819;
+  --q-warning-bg:   #2a1f12;
+  --q-muted-bg:     #222633;
+  --q-muted-text:   #9aa3b8;
+  --q-bg-shell:     #0c0e14;
+  --q-bg-screen:    #151820;
+  --q-bg-card:      #1c2030;
+  --q-bg-nav:       #1c2030;
+  --q-bg-input:     #222633;
+  --q-text-secondary: #9aa3b8;
 }
 
 /* ─── Base ─────────────────────────────────────────────────────── */
@@ -38,7 +65,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--q-font);
   font-weight: 400;
-  background: #eef0f5;
+  background: var(--q-bg-shell);
   color: var(--q-text);
   margin: 0;
   -webkit-tap-highlight-color: transparent;
@@ -87,7 +114,7 @@ a[class$="-logo-frame"] {
   min-height: 100dvh;
   display: flex;
   justify-content: center;
-  background: #eef0f5;
+  background: var(--q-bg-shell);
   padding: 0;
 }
 
@@ -95,7 +122,7 @@ a[class$="-logo-frame"] {
   width: 100%;
   max-width: var(--q-shell-max);
   min-height: 100dvh;
-  background: #fff;
+  background: var(--q-bg-screen);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3277,7 +3304,7 @@ a[class$="-logo-frame"] {
   transform: translateX(-50%);
   width: calc(100% - (var(--q-nav-inset) * 2));
   max-width: calc(var(--q-shell-max) - (var(--q-nav-inset) * 2));
-  background: #fff;
+  background: var(--q-bg-nav);
   border-radius: 10px;
   box-shadow: 0 0 3.5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -14459,4 +14486,140 @@ a.formule-card--yukon .formule-card-btn--solid,
 
 .page-mpa .nav-item.active {
   color: #5825fd;
+}
+
+/* ─── Dark theme — composants courants ─────────────────────────── */
+html[data-theme="dark"] .page-lpp,
+html[data-theme="dark"] .page-mpa,
+html[data-theme="dark"] .page-rg,
+html[data-theme="dark"] .page-rt,
+html[data-theme="dark"] .page-rm,
+html[data-theme="dark"] .page-rml,
+html[data-theme="dark"] .page-rl,
+html[data-theme="dark"] .page-dest,
+html[data-theme="dark"] .page-dom,
+html[data-theme="dark"] .page-le,
+html[data-theme="dark"] .page-ed,
+html[data-theme="dark"] .page-osp,
+html[data-theme="dark"] .page-mp,
+html[data-theme="dark"] .page-mpo,
+html[data-theme="dark"] .page-mpl,
+html[data-theme="dark"] .page-lp {
+  background: var(--q-bg-screen);
+}
+
+html[data-theme="dark"] .rg-card,
+html[data-theme="dark"] .rg-row,
+html[data-theme="dark"] .mp-card,
+html[data-theme="dark"] .le-school,
+html[data-theme="dark"] .rm-card,
+html[data-theme="dark"] .rm-input,
+html[data-theme="dark"] .rt-option,
+html[data-theme="dark"] .rml-card,
+html[data-theme="dark"] .rml-row,
+html[data-theme="dark"] .lpp-step-card,
+html[data-theme="dark"] .lpp-order-card,
+html[data-theme="dark"] .paiement-welcome,
+html[data-theme="dark"] .paiement-help,
+html[data-theme="dark"] .ed-form-card,
+html[data-theme="dark"] .dom-card,
+html[data-theme="dark"] .dest-card,
+html[data-theme="dark"] .osp-card,
+html[data-theme="dark"] .mpa-steps-card,
+html[data-theme="dark"] .mpa-docs-card,
+html[data-theme="dark"] .lp-offer,
+html[data-theme="dark"] .lp-field,
+html[data-theme="dark"] .connexion-form-card,
+html[data-theme="dark"] .inscription-form-card,
+html[data-theme="dark"] .formule-card,
+html[data-theme="dark"] .msg-thread,
+html[data-theme="dark"] .msg-compose,
+html[data-theme="dark"] .home-menu-panel {
+  background: var(--q-bg-card);
+  border-color: var(--q-border);
+  color: var(--q-text);
+}
+
+html[data-theme="dark"] .rt-option.is-selected {
+  background: var(--q-surface-2);
+  border-color: var(--q-primary);
+}
+
+html[data-theme="dark"] .rg-row,
+html[data-theme="dark"] .rml-row,
+html[data-theme="dark"] .mpa-doc-row {
+  border-bottom-color: var(--q-border);
+}
+
+html[data-theme="dark"] .rg-section-title,
+html[data-theme="dark"] .rg-row-title,
+html[data-theme="dark"] .mp-card-title,
+html[data-theme="dark"] .le-school-name,
+html[data-theme="dark"] .rt-intro h1,
+html[data-theme="dark"] .rt-pick-label,
+html[data-theme="dark"] .rt-option-title,
+html[data-theme="dark"] .rg-intro h1,
+html[data-theme="dark"] .rm-intro h1,
+html[data-theme="dark"] .rml-intro h1 {
+  color: var(--q-text);
+}
+
+html[data-theme="dark"] .rg-row-desc,
+html[data-theme="dark"] .rt-option-desc,
+html[data-theme="dark"] .rt-intro p,
+html[data-theme="dark"] .rg-intro p,
+html[data-theme="dark"] .le-school-loc,
+html[data-theme="dark"] .le-school-meta-item {
+  color: var(--q-text-secondary);
+}
+
+html[data-theme="dark"] .rg-row-value {
+  color: var(--q-muted);
+}
+
+html[data-theme="dark"] .rt-info,
+html[data-theme="dark"] .rm-protect,
+html[data-theme="dark"] .rm-tip,
+html[data-theme="dark"] .lpp-support,
+html[data-theme="dark"] .mp-cta,
+html[data-theme="dark"] .mpa-help,
+html[data-theme="dark"] .rml-trust,
+html[data-theme="dark"] .rml-help,
+html[data-theme="dark"] .home-menu-help {
+  background: var(--q-surface-2);
+}
+
+html[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  color: var(--q-text);
+}
+
+html[data-theme="dark"] .rm-input input,
+html[data-theme="dark"] .lp-field-input {
+  color: var(--q-text);
+}
+
+html[data-theme="dark"] .bottom-nav {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .nav-item {
+  color: var(--q-navy);
+}
+
+html[data-theme="dark"] .home-menu-backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="dark"] .le-chip:not(.is-selected) {
+  background: var(--q-bg-card);
+  border-color: var(--q-border);
+  color: var(--q-text);
+}
+
+html[data-theme="dark"] .q-pager__btn {
+  background: var(--q-bg-card);
+  border-color: var(--q-border);
+  color: var(--q-text);
 }

@@ -1,9 +1,11 @@
-const CACHE = "qiryna-pwa-v84";
+const CACHE = "qiryna-pwa-v85";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/app.css",
   "./manifest.webmanifest",
+  "./js/theme-init.js",
+  "./js/theme.js",
   "./js/components.js",
   "./js/schools.js",
   "./js/logement-offres.js",
