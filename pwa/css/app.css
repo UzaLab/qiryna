@@ -593,6 +593,10 @@ img { display: block; max-width: 100%; }
 }
 
 /* ─── Paiement réussi (structure Figma 516:403) ───────────────── */
+.page-paiement {
+  --pr-block-gap: 22px;
+}
+
 .paiement-header {
   border-radius: 0 0 50px 50px;
   padding: 0 var(--q-gutter) 24px;
@@ -609,13 +613,16 @@ img { display: block; max-width: 100%; }
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pr-block-gap);
 }
 
 .page-paiement .paiement-page-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 
 .page-paiement .paiement-back {
@@ -648,7 +655,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 
 .page-paiement .paiement-success-illus {
@@ -846,7 +853,7 @@ img { display: block; max-width: 100%; }
 }
 
 .page-paiement .paiement-welcome-wrap {
-  padding: 20px 0;
+  padding: 0;
 }
 
 .page-paiement .paiement-welcome {
@@ -987,7 +994,7 @@ img { display: block; max-width: 100%; }
 }
 
 .page-paiement .paiement-help-wrap {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .page-paiement .paiement-help {
@@ -6144,6 +6151,7 @@ a.formule-card-btn:focus {
 
 /* ─── Langues Post Payment (Figma 810:9) ─────────────────────── */
 .page-lpp {
+  --lpp-block-gap: 22px;
   background: #faf9fe;
 }
 
@@ -6162,6 +6170,9 @@ a.formule-card-btn:focus {
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lpp-block-gap);
 }
 
 .lpp-topbar {
@@ -6169,7 +6180,7 @@ a.formule-card-btn:focus {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 
 .lpp-back {
@@ -6242,7 +6253,7 @@ a.formule-card-btn:focus {
   align-items: center;
   width: 100%;
   padding-left: 26px;
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .lpp-success-illus {
@@ -6522,7 +6533,7 @@ a.formule-card-btn:focus {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  padding: 20px 0;
+  padding: 0;
 }
 
 .lpp-steps-heading {
@@ -7807,10 +7818,12 @@ a.formule-card-btn:focus {
   min-width: 0;
   display: flex;
   gap: 7px;
+  padding: 2px 1px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  box-sizing: border-box;
 }
 
 .le-chips::-webkit-scrollbar {
@@ -7828,10 +7841,10 @@ a.formule-card-btn:focus {
   justify-content: center;
   gap: 5px;
   padding: 12px 8px;
-  border: 1px solid transparent;
+  border: 1px solid #f5f5f5;
   border-radius: 10px;
   background: #fff;
-  box-shadow: 0 0 3.5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3.5px rgba(0, 0, 0, 0.12);
   color: #0d1b3e;
   font-family: inherit;
   cursor: pointer;
@@ -7840,7 +7853,7 @@ a.formule-card-btn:focus {
 
 .le-chip.is-selected {
   background: #f8f8fd;
-  border-color: #8873fe;
+  border-color: #5a2ef1;
 }
 
 .le-chip-icon {
@@ -9207,6 +9220,10 @@ a.formule-card-btn:focus {
 }
 
 /* ─── Orientation Scolaire et Professionnelle (Figma 424:879) ─── */
+.page-osp {
+  --osp-block-gap: 22px;
+}
+
 .page-osp .osp-header {
   flex: 1;
   min-height: 0;
@@ -9222,6 +9239,9 @@ a.formule-card-btn:focus {
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: var(--osp-block-gap);
 }
 
 .osp-topbar {
@@ -9229,7 +9249,6 @@ a.formule-card-btn:focus {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 30px;
 }
 
 .osp-back {
@@ -9300,7 +9319,6 @@ a.formule-card-btn:focus {
 
 .osp-intro {
   width: 100%;
-  padding-bottom: 16px;
 }
 
 .osp-intro h1 {
@@ -9340,7 +9358,6 @@ a.formule-card-btn:focus {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   width: 100%;
-  padding-top: 12px;
 }
 
 @media (max-width: 420px) {
@@ -9476,7 +9493,7 @@ a.formule-card-btn:focus {
   gap: 16px;
   align-items: flex-start;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 0;
   padding: 20px 9px;
   border-radius: 10px;
   background: #f5f3ff;
@@ -9513,17 +9530,20 @@ a.formule-card-btn:focus {
 
 .osp-method {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--osp-block-gap);
 }
 
 .osp-method h2 {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .osp-steps {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 0;
   position: relative;
 }
 
@@ -9533,7 +9553,7 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 11px;
+  gap: 8px;
   text-align: center;
 }
 
@@ -9541,7 +9561,6 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
   width: 88px;
   max-width: 100%;
   position: relative;
@@ -9614,7 +9633,10 @@ a.formule-card-btn:focus {
 
 .osp-paths {
   width: 100%;
-  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--osp-block-gap);
+  padding-top: 0;
 }
 
 .osp-path-list {
@@ -9622,7 +9644,7 @@ a.formule-card-btn:focus {
   flex-direction: column;
   gap: 14px;
   width: 100%;
-  padding-top: 14px;
+  padding-top: 0;
 }
 
 .osp-path {
@@ -9816,7 +9838,7 @@ a.formule-card-btn:focus {
 
 .osp-cta-wrap {
   width: 100%;
-  padding: 28px 0 20px;
+  padding: 0;
 }
 
 .osp-cta {
@@ -10050,6 +10072,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 /* ── Logement Reglages / post paiement (Figma 816:622) ── */
+.page-lp {
+  --lp-block-gap: 22px;
+}
+
 .page-lp .lp-header {
   flex: 1;
   min-height: 0;
@@ -10060,13 +10086,18 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-lp .lp-main {
   display: flex;
   flex-direction: column;
+  gap: var(--lp-block-gap);
   padding: 16px 16px var(--q-content-pad-bottom);
   box-sizing: border-box;
 }
 
+.page-lp .formule-topbar {
+  padding-bottom: 0;
+}
+
 .lp-progress {
   width: 100%;
-  margin-top: 8px;
+  margin-top: 0;
   padding: 17px;
   border: 1px solid rgba(226, 232, 240, 0.7);
   border-radius: 10px;
@@ -10137,7 +10168,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .lp-tabs {
   display: flex;
   width: 100%;
-  margin-top: 16px;
+  margin-top: 0;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -10178,7 +10209,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 
 .lp-panel {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lp-block-gap);
 }
 
 .lp-apercu {
@@ -10384,7 +10418,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .lp-help-intro {
-  margin-top: 24px;
+  margin-top: 0;
   width: 100%;
 }
 
@@ -10409,7 +10443,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .lp-form-row {
@@ -11140,6 +11174,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 /* ── Réglages / Compte (Figma 1188:1041) ── */
+.page-rg {
+  --rg-block-gap: 15px;
+}
+
 .page-rg .rg-header {
   flex: 1;
   min-height: 0;
@@ -11152,6 +11190,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-rg .rg-main {
   display: flex;
   flex-direction: column;
+  gap: var(--rg-block-gap);
   width: 100%;
   max-width: 100%;
   padding: 16px 16px var(--q-content-pad-bottom);
@@ -11159,12 +11198,12 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .page-rg .home-topbar {
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 
 .rg-intro {
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 .rg-intro h1 {
@@ -11185,12 +11224,15 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .rg-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rg-block-gap);
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .rg-section-title {
-  margin: 0 0 12px;
+  margin: 0;
   padding: 0 4px;
   font-size: 14px;
   font-weight: 600;
@@ -11313,6 +11355,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 /* ── Réglages thème (Figma 810:2999) ── */
+.page-rt {
+  --rt-block-gap: 15px;
+}
+
 .page-rt .rt-header {
   flex: 1;
   min-height: 0;
@@ -11325,6 +11371,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-rt .rt-main {
   display: flex;
   flex-direction: column;
+  gap: var(--rt-block-gap);
   width: 100%;
   max-width: 100%;
   padding: 16px 16px var(--q-content-pad-bottom);
@@ -11332,12 +11379,12 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .page-rt .home-topbar {
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 
 .rt-intro {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .rt-intro h1 {
@@ -11358,7 +11405,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .rt-pick-label {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
   line-height: 24px;
@@ -11368,7 +11415,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .rt-options {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: var(--rt-block-gap);
   width: 100%;
 }
 
@@ -11493,7 +11540,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   align-items: center;
   gap: 11px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0;
   min-height: 61px;
   padding: 8px 9px;
   border-radius: 10px;
@@ -11530,7 +11577,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 28px;
+  margin-top: 0;
   padding: 16px 24px;
   border: 0;
   border-radius: 10px;
@@ -11549,6 +11596,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 /* ── Réglages Mot de passe (Figma 810:3378) ── */
+.page-rm {
+  --rm-block-gap: 15px;
+}
+
 .page-rm .rm-header {
   flex: 1;
   min-height: 0;
@@ -11561,6 +11612,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-rm .rm-main {
   display: flex;
   flex-direction: column;
+  gap: var(--rm-block-gap);
   width: 100%;
   max-width: 100%;
   padding: 16px 16px var(--q-content-pad-bottom);
@@ -11568,12 +11620,12 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .page-rm .home-topbar {
-  padding-bottom: 30px;
+  padding-bottom: 0;
 }
 
 .rm-intro {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .rm-intro h1 {
@@ -11643,8 +11695,9 @@ a.formule-card--yukon .formule-card-btn--solid,
 .rm-card {
   display: flex;
   flex-direction: column;
+  gap: var(--rm-block-gap);
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 16px;
   border-radius: 10px;
   background: #fff;
@@ -11655,13 +11708,14 @@ a.formule-card--yukon .formule-card-btn--solid,
 .rm-field {
   display: flex;
   flex-direction: column;
+  gap: var(--rm-block-gap);
   width: 100%;
 }
 
 .rm-field + .rm-field,
 .rm-field + .rm-strength,
 .rm-strength + .rm-field {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .rm-label {
@@ -11676,7 +11730,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   display: flex;
   align-items: center;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 0;
   padding: 7px;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
@@ -11743,7 +11797,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 
 .rm-strength {
   width: 100%;
-  margin-top: 14px;
+  margin-top: 0;
 }
 
 .rm-strength-label {
@@ -11856,7 +11910,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   align-items: center;
   gap: 11px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: -10px;
   min-height: 61px;
   padding: 8px 9px;
   border-radius: 10px;
@@ -11893,7 +11947,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 16px 24px;
   border: 0;
   border-radius: 10px;
@@ -12390,6 +12444,10 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 /* ── Mon projet (Figma 856:447) ── */
+.page-mp {
+  --mp-block-gap: 22px;
+}
+
 .page-mp .mp-header {
   flex: 1;
   min-height: 0;
@@ -12402,6 +12460,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-mp .mp-main {
   display: flex;
   flex-direction: column;
+  gap: var(--mp-block-gap);
   width: 100%;
   max-width: 100%;
   padding: 16px 16px var(--q-content-pad-bottom);
@@ -12409,8 +12468,17 @@ a.formule-card--yukon .formule-card-btn--solid,
 }
 
 .page-mp .home-topbar {
-  padding-bottom: 30px;
-  margin-bottom: -7px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.page-mp .mp-hero {
+  padding: 0;
+  min-height: 130px;
+}
+
+.page-mp .mp-hero-illus {
+  top: 0;
 }
 
 .mp-hero {
@@ -12474,7 +12542,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 24px;
+  padding-top: 0;
   box-sizing: border-box;
 }
 
@@ -12502,7 +12570,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   flex-direction: column;
   gap: 14px;
   width: 100%;
-  padding-top: 16px;
+  padding-top: 0;
 }
 
 .mp-card {
@@ -12683,7 +12751,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   width: 100%;
   height: 86px;
   min-height: 86px;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 0 9px;
   border-radius: 10px;
   background: #f5f3ff;
@@ -13661,6 +13729,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 /* ── Mon projet — admission (856:1251) ── */
 
 .page-mpa {
+  --mpa-block-gap: 22px;
   background: #fff;
 }
 
@@ -13674,6 +13743,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .page-mpa .mpa-main {
   display: flex;
   flex-direction: column;
+  gap: var(--mpa-block-gap);
   padding: 16px 16px var(--q-content-pad-bottom);
   box-sizing: border-box;
 }
@@ -13840,7 +13910,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 .mpa-tabs {
   display: flex;
   width: 100%;
-  margin-top: 16px;
+  margin-top: 0;
   padding: 1px;
   border: 1px solid #f8f8fc;
   border-radius: 14px;
@@ -13885,7 +13955,7 @@ a.formule-card--yukon .formule-card-btn--solid,
 
 .mpa-panel {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .mpa-placeholder {
@@ -14115,7 +14185,7 @@ a.formule-card--yukon .formule-card-btn--solid,
   justify-content: space-between;
   gap: 8px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 9px;
   border-radius: 10px;
   background: #f5f3ff;
