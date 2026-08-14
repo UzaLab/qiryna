@@ -76,6 +76,12 @@ textarea::placeholder {
 
 img { display: block; max-width: 100%; }
 
+a[class$="-logo-frame"] {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ─── Screen Shell ──────────────────────────────────────────────── */
 .screen-shell {
   min-height: 100dvh;
