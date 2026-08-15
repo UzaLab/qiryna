@@ -6907,10 +6907,6 @@ a.formule-card-btn:focus {
 /* ─── Destination d'étude (Figma 436:157) ─────────────────────── */
 .page-dest {
   --dest-block-gap: 22px;
-  /* Pilot: nav in flex shell — scroll reserves gap only, not nav height */
-  height: 100dvh;
-  min-height: 100dvh;
-  overflow: hidden;
 }
 
 .page-dest .dest-header {
@@ -6918,7 +6914,7 @@ a.formule-card-btn:focus {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--q-gutter);
+  padding: 0 var(--q-gutter) 24px;
 }
 
 .page-dest .dest-main {
@@ -6927,24 +6923,7 @@ a.formule-card-btn:focus {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
-  padding-bottom: var(--q-nav-gap);
-}
-
-.page-dest .bottom-nav {
-  position: relative;
-  left: auto;
-  transform: none;
-  flex-shrink: 0;
-  width: calc(100% - (var(--q-nav-inset) * 2));
-  max-width: calc(var(--q-shell-max) - (var(--q-nav-inset) * 2));
-  margin: 0 auto max(12px, env(safe-area-inset-bottom, 0px));
-}
-
-@media (min-width: 769px) {
-  .screen.page-dest {
-    height: calc(100dvh - 48px);
-    min-height: calc(100dvh - 48px);
-  }
+  padding-bottom: var(--q-content-pad-bottom);
 }
 
 .dest-topbar {
