@@ -319,6 +319,7 @@
       panel.classList.toggle('is-active', on);
       panel.hidden = !on;
     });
+    lastScroll = scrollEl?.scrollTop || 0;
     updateFloatCtaFromScroll();
   }
 
@@ -329,13 +330,10 @@
   const initialTab = params.get('tab') || 'formations';
   activateTab(['presentation', 'formations', 'points'].includes(initialTab) ? initialTab : 'formations');
 
-  if (floatCta) {
-    floatCta.href = `offre-orientation.html?ecole=${encodeURIComponent(school.id)}&pays=${encodeURIComponent(pays)}&domaine=${encodeURIComponent(domaine)}`;
-  }
-
   if (scrollEl && floatCta) {
-    let ticking = false;
+    floatCta.href = `offre-orientation.html?ecole=${encodeURIComponent(school.id)}&pays=${encodeURIComponent(pays)}&domaine=${encodeURIComponent(domaine)}`;
 
+    let ticking = false;
     scrollEl.addEventListener(
       'scroll',
       () => {
@@ -351,6 +349,8 @@
     );
 
     updateFloatCtaFromScroll();
+  } else if (floatCta) {
+    floatCta.href = `offre-orientation.html?ecole=${encodeURIComponent(school.id)}&pays=${encodeURIComponent(pays)}&domaine=${encodeURIComponent(domaine)}`;
   }
 </script>
 </body>

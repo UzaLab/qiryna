@@ -8290,6 +8290,15 @@ a.formule-card-btn:focus {
 /* ─── Fiche école (Figma 440:160) ─────────────────────────────── */
 .page-ed {
   --ed-block-gap: 22px;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+@media (min-width: 769px) {
+  .page-ed {
+    height: calc(100dvh - 48px);
+    max-height: calc(100dvh - 48px);
+  }
 }
 
 .page-ed .ed-header {
@@ -8298,18 +8307,27 @@ a.formule-card-btn:focus {
   display: flex;
   flex-direction: column;
   padding: 0 var(--q-gutter) 24px;
+  overflow: hidden;
 }
 
 .page-ed .ed-main {
   flex: 1;
   min-height: 0;
+  overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
   display: flex;
   flex-direction: column;
   gap: var(--ed-block-gap);
+}
+
+.page-ed .ed-main::-webkit-scrollbar {
+  display: none;
 }
 
 /* Espace scroll sous le CTA flottant (nav inchangée — même token que les autres pages) */
