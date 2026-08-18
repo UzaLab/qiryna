@@ -940,7 +940,7 @@ a[class$="-logo-frame"] {
   display: flex;
   align-items: flex-start;
   padding-top: 10px;
-  min-height: 205px;
+  min-height: 150px;
 }
 
 .page-paiement .paiement-step-divider {
@@ -5535,6 +5535,9 @@ a.objectifs-cta:focus {
   -webkit-overflow-scrolling: touch;
   padding-top: 16px;
   padding-bottom: var(--q-content-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .of-intro {
@@ -5553,7 +5556,7 @@ a.objectifs-cta:focus {
 
 .page-of .formule-intro h1 {
   font-size: 16px;
-}
+ }
 
 .page-of .formule-intro p {
   font-size: 13px;
@@ -5617,9 +5620,65 @@ a.objectifs-cta:focus {
   flex-direction: column;
   gap: 22px;
   width: 100%;
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 8px;
+  padding-bottom: 0;
   box-sizing: border-box;
+}
+
+/* Ruban + titre/icône sur une ligne — formules orientation */
+.page-of .formule-stack .of-card {
+  position: relative;
+  overflow: visible;
+  padding-top: 26px;
+}
+
+.page-of .of-card-ribbon {
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: calc(100% - 28px);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 0;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.page-of .of-card-ribbon--jordan {
+  background: #570bfd;
+}
+
+.page-of .of-card-ribbon--tyson {
+  background: #00a31c;
+}
+
+.page-of .of-card-ribbon--pele {
+  background: #fc010d;
+}
+
+.page-of .formule-card-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.page-of .formule-card-title-row .formule-card-name {
+  margin: 0;
+}
+
+.page-of .formule-card-title-row .formule-card-icon-wrap {
+  flex-shrink: 0;
 }
 
 .page-of .formule-stack .formule-card {
@@ -6025,7 +6084,6 @@ a.formule-card-btn:focus {
 
 .formule-features-wrap {
   width: 100%;
-  padding-bottom: 20px;
 }
 
 .formule-features {

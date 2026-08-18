@@ -14,13 +14,20 @@
   <link rel="stylesheet" href="../css/app.css" />
 </head>
 <body>
-<div class="screen-shell">
-  <div class="screen page-formule page-oo">
+<!--
+  @maquette-id offre-orientation
+  @frontend-route /offres/[slug]
+  @frontend-file frontend-main/app/pages/offres/[slug].vue
+  @sync-status aligned | 2026-08-17 | commit db69933
+  @notes Palier unique domaine ; aussi référence orientation/index.vue
+-->
+<div class="screen-shell" data-q-layout="mobile-shell">
+  <div data-maquette-id="offre-orientation" class="screen page-formule page-oo">
 
     <div class="formule-header">
       <div class="formule-main">
 
-        <header class="formule-topbar">
+        <header data-q-component="QTopBar" class="formule-topbar">
           <a href="ecole-detail.html" class="formule-back" data-oo-back aria-label="Retour">
             <img src="../assets/icons/ic-lang-back.svg" alt="" width="24" height="24" />
           </a>
@@ -33,18 +40,8 @@
           </div>
         </header>
 
-        <section class="oo-hero">
-          <div class="oo-hero-copy">
-            <h1>Vous méritez<br />le meilleur.</h1>
-            <p>Nous vous accompagnons<br />à chaque étape vers<br />les meilleures écoles.</p>
-          </div>
-          <div class="oo-hero-visual">
-            <img src="../assets/images/offre/hero-gift.png" alt="" width="218" height="145" />
-          </div>
-        </section>
-
         <div class="oo-formule-wrap">
-          <article class="formule-card formule-card--acon of-card">
+          <article data-q-tier="acon" data-q-component="QCard" class="formule-card formule-card--acon of-card">
             <div class="formule-card-head">
               <img src="../assets/icons/ic-oo-feature-1.svg" alt="" class="formule-card-icon" width="36" height="36" />
               <h2 class="formule-card-name">Accompagnement candidature</h2>
@@ -52,22 +49,22 @@
               <p class="formule-card-tagline">Ce qui est inclus dans votre offre</p>
               <hr class="formule-card-rule" />
             </div>
-            <ul class="formule-card-list">
-              <li>
+            <ul class="formule-card-list" data-oo-features>
+              <li data-oo-feature="projet">
                 <img src="../assets/icons/orientation-formules/ic-of-check-purple.svg" alt="" width="12" height="12" />
-                <span>Projet professionnel — Clarifiez vos objectifs et construisez un projet qui vous ressemble.</span>
+                <span>Projet professionnel — <span class="oo-feature-desc"></span></span>
               </li>
-              <li>
+              <li data-oo-feature="aptitude">
                 <img src="../assets/icons/orientation-formules/ic-of-check-purple.svg" alt="" width="12" height="12" />
-                <span>Test d'aptitude (GMAT, TOEFL, ..) — Préparation personnalisée et stratégies efficaces pour maximiser vos scores.</span>
+                <span>Test d'aptitude (Tage Mage, GMAT, …) — <span class="oo-feature-desc"></span></span>
               </li>
-              <li>
+              <li data-oo-feature="dossier">
                 <img src="../assets/icons/orientation-formules/ic-of-check-purple.svg" alt="" width="12" height="12" />
-                <span>Dossier de candidature — Rédaction, relecture et optimisation de vos documents pour un dossier convaincant.</span>
+                <span>Dossier de candidature — <span class="oo-feature-desc"></span></span>
               </li>
-              <li>
+              <li data-oo-feature="entretien">
                 <img src="../assets/icons/orientation-formules/ic-of-check-purple.svg" alt="" width="12" height="12" />
-                <span>Simulation d'entretien — Entraînements personnalisés pour maîtriser vos entretiens et faire la différence.</span>
+                <span>Simulation d'entretien — <span class="oo-feature-desc"></span></span>
               </li>
             </ul>
             <div class="formule-card-foot">
@@ -83,7 +80,7 @@
       </div>
     </div>
 
-    <nav class="bottom-nav" aria-label="Navigation principale">
+    <nav data-q-component="QBottomNav" class="bottom-nav" aria-label="Navigation principale">
       <a href="home.html" class="nav-item">
         <span class="nav-item__icon"><img src="../assets/icons/nav-home.svg" alt="" width="24" height="24" /></span>
         <span>Accueil</span>
@@ -110,6 +107,8 @@
 </div>
 
 <script type="module">
+  import { applyOfferFeaturesByDomaine } from '../js/offer-orientation.js';
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('../sw.js').catch(() => {});
@@ -121,6 +120,8 @@
   const pays = params.get('pays') || 'france';
   const domaine = params.get('domaine') || 'architecture';
   const formation = params.get('formation') || '0';
+
+  applyOfferFeaturesByDomaine(domaine);
 
   const back = document.querySelector('[data-oo-back]');
   if (back) {
