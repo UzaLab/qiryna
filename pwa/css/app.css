@@ -4156,7 +4156,9 @@ a[class$="-logo-frame"] {
 }
 
 .home-progress-desc {
-  padding-top: 8px;
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 2px;
   font-size: 11px;
   font-weight: 400;
   line-height: 17.875px;
@@ -4168,7 +4170,7 @@ a[class$="-logo-frame"] {
 }
 
 .home-progress-btn {
-  margin-top: 10px;
+  margin-top: 6px;
   padding: 8px 13px;
   border: 0;
   border-radius: 8px;
